@@ -1,32 +1,81 @@
+/* $black-russian: #080017;
+$bright-sun: #ffd239;
+$bright-sun-2: #fed339;
+$koromiko: #ffc564;
+$lavender-rose: #f986e1;
+$persimmon: #ff5e54;
+$radical-red: #ff385f;
+$red-orange: #fc4235;
+$ripe-plum: #31005b;
+$texas-rose: #ffac50;
+$tolopea: #24003e;
+$white: #ffffff;
+
+$font-size: 10px; */
+
+
 body {
-  background-color: black;
-
-  
+  background-color: rgb(34, 34, 34);
+  display: grid;
+  height: 100vh;
+  margin: 0;
+  place-items: center center;
 }
 
-.center {
-  margin: 0 auto;
+
+
+.canvas {
+
+  /* font-size: $font-size; */
+  position: relative;
+  left: -1.5em;
+  /* display: flex; */
+  /* align-items: flex-end; */
+  width: max-content;
+  height: 35.5em;
+  z-index: 0;
+
+
+
+   /* line */
+  &::after {
+    content: "";
+    position: absolute;
+    left: -7.1875em;
+    width: 140%;
+    height: 0.5em;
+    border-radius: 0.5em;
+    /* background-color: $tolopea; */
+    z-index: 2;
+  }
 }
 
-#square {
-
-  background: lightblue;
-  width: 100px;
-  height: 100px;
+.pumpkinContain {
+  /* position: relative; */
+  width: 17.25em;
+  height: 13.875em;
+  margin-left: 10.8125em;
+  /* z-index: 1; */
 }
 
-#circle {
-  background: orange;
+.pumpkinBody {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: inherit;
+  height: inherit;
+
+  background-color: #ff5e54;
+  border-radius: 13.875em;
+  /* box-shadow: -3.875em 0 #fc4235 3.875em 0 #ffc564; */
+}
+
+.pumpkinEye {
+  display: block;
+  position: relative;
+  top: 3em;
+  width: 3em;
+  height: 3em;
   border-radius: 50%;
-  width: 100px;
-  height:90px;
-}
-
-#triangle{
-   width: 0;
-   height: 0;
-   border-left: 40px solid transparent;
-   border-right: 40px solid transparent;
-   border-bottom: 80px solid red;
-   transform: rotate(45deg);
+  background-color: white;
 }
