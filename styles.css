@@ -1,3 +1,7 @@
+/* *{
+  border: 5px red solid;
+} */
+
 /* $black-russian: #080017;
 $bright-sun: #ffd239;
 $bright-sun-2: #fed339;
@@ -25,7 +29,6 @@ body {
 
 
 .canvas {
-
   /* font-size: $font-size; */
   position: relative;
   left: -1.5em;
@@ -50,6 +53,7 @@ body {
   }
 }
 
+/* Pumpkin Container  */
 .pumpkinContain {
   /* position: relative; */
   width: 17.25em;
@@ -58,18 +62,20 @@ body {
   /* z-index: 1; */
 }
 
+/* Pumpkin body shape  */
 .pumpkinBody {
   position: relative;
   display: flex;
   justify-content: center;
   width: inherit;
   height: inherit;
-
+  
   background-color: #ff5e54;
   border-radius: 13.875em;
   /* box-shadow: -3.875em 0 #fc4235 3.875em 0 #ffc564; */
 }
 
+/* Pumpkin Eye */
 .pumpkinEye {
   display: block;
   position: relative;
@@ -78,4 +84,38 @@ body {
   height: 3em;
   border-radius: 50%;
   background-color: white;
+
+
+
+/* Eye Pupil Shapes */
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0.625em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    background-color: #000;
+  }
+
+  /* Cheek Over Eye shapes */
+  /* &::after {
+    content: "";
+    position: absolute;
+    top: 2.25em;
+    right: 1.25em;
+    width: 4.6875em;
+    height: 4.6875em;
+    border-radius: 50%;
+    background-color: #ff5e54;
+  } */
+
+
+
+
+
+
+
 }
