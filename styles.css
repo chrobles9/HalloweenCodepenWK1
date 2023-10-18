@@ -1,67 +1,67 @@
 /* *{
-  border: 5px red solid;
+  border: 1px red solid;
 } */
+:root{
+  --canvas-Background: #181818;
+  --black: #020006;
+  --yellow: #ffd239;
+  --orange: #F28705;
+  --orange-shadow: #F25C05;
 
-/* $black-russian: #080017;
-$bright-sun: #ffd239;
-$bright-sun-2: #fed339;
-$koromiko: #ffc564;
-$lavender-rose: #f986e1;
-$persimmon: #ff5e54;
-$radical-red: #ff385f;
-$red-orange: #fc4235;
-$ripe-plum: #31005b;
-$texas-rose: #ffac50;
-$tolopea: #24003e;
-$white: #ffffff;
 
-$font-size: 10px; */
+  --orange-border: #D93D04;
 
+
+  --red-orange: #fc4235;
+  --white: #ffffff;
+  --green: #014017;
+  --font-size: 10px;
+  
+}
 
 body {
-  background-color: rgb(34, 34, 34);
+  background-color: var(--canvas-Background);
   display: grid;
   height: 100vh;
-  margin: 0;
+  margin: 0 auto;
   place-items: center center;
 }
 
 
-
-.canvas {
-  /* font-size: $font-size; */
+/********** Door *********/
+.door {
+  /* font-size: var(--font-size); */
   position: relative;
-  left: -1.5em;
-  /* display: flex; */
-  /* align-items: flex-end; */
+  display: flex;
+  align-items: flex-end;
   width: max-content;
-  height: 35.5em;
+  padding: 2em 2em 0 2em;
+  height: 45em;
   z-index: 0;
-
-
-
-   /* line */
-  &::after {
-    content: "";
-    position: absolute;
-    left: -7.1875em;
-    width: 140%;
-    height: 0.5em;
-    border-radius: 0.5em;
-    /* background-color: $tolopea; */
-    z-index: 2;
-  }
+  background-image: url("door.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* Pumpkin Shadow */
+    /* &::after {
+      content: "";
+      position: absolute;
+      width: 70%;
+      height: 0.8em;
+      left: 3.3em;
+      border-radius: 0.5em;
+      background-color: var(--black);
+      z-index: 2;
+    } */
 }
 
-/* Pumpkin Container  */
-.pumpkinContain {
-  /* position: relative; */
-  width: 17.25em;
-  height: 13.875em;
-  margin-left: 10.8125em;
-  /* z-index: 1; */
+/********* Pumpkin Container  *********/
+.pumpkinSize {
+  position: relative;
+  width: 18em;
+  height: 12em;
+  z-index: 1;
 }
-
 /* Pumpkin body shape  */
 .pumpkinBody {
   position: relative;
@@ -69,53 +69,88 @@ body {
   justify-content: center;
   width: inherit;
   height: inherit;
-  
-  background-color: #ff5e54;
+  background-color: var(--orange);
   border-radius: 13.875em;
+  border: 3px solid var(--orange-border);
   /* box-shadow: -3.875em 0 #fc4235 3.875em 0 #ffc564; */
 }
-
-/* Pumpkin Eye */
+/********* Pumpkin Eyes *********/
 .pumpkinEye {
   display: block;
   position: relative;
-  top: 3em;
-  width: 3em;
-  height: 3em;
-  border-radius: 50%;
-  background-color: white;
-
-
-
+  top: 2em;
+  /* triangles */
+  width: 0;
+  height: 0;
+  border-left: 2.5em solid transparent;
+  border-right: 2.5em solid transparent;
+  border-bottom: 5em solid var(--black);
 /* Eye Pupil Shapes */
   &::before {
     content: "";
     position: absolute;
-    right: 0.625em;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 2.5em;
-    height: 2.5em;
-    border-radius: 50%;
-    background-color: #000;
+    top: 2.5em;
+    right: -1.5em;
+    transform: translateY(-35%);
+    width: 0;
+    height: 0;
+    border-left: 1.5em solid transparent;
+    border-right: 1.5em solid transparent;
+    border-bottom: 3em solid var(--white);
   }
-
-  /* Cheek Over Eye shapes */
-  /* &::after {
+  /* Cheek shapes */
+  &::after {
     content: "";
     position: absolute;
     top: 2.25em;
-    right: 1.25em;
+    right: 1em;
     width: 4.6875em;
     height: 4.6875em;
     border-radius: 50%;
-    background-color: #ff5e54;
-  } */
-
-
-
-
-
-
-
+    background-color: var(--orange);
+  }
 }
+.eyeSpread {
+  /* Gap between eyes */
+  margin-left: 1em;
+  /* Gap between cheeks  */
+  transform: scaleX(-1);
+}
+
+/********* Pumpkin Stem  *********/
+.pumpkinStem{
+/* Stem Curved portion  */
+  position: absolute;
+  top: -4em;
+  left: 8em;
+  width: 5em;
+  height: 3em;
+  border-radius: 4em 4em 0 0;
+  color: var(--green);
+  border: 1.5em solid;
+  border-bottom: 0;
+  box-sizing: border-box;
+/* Stem Tip End  */
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -0.5em;
+    right: -1.5em;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 40%;
+    background-color: currentColor;
+  }
+/* Stem straight section  */
+  &::after {
+    content: "";
+    position: absolute;
+    width: 1.5em;
+    height: 3em;
+    right: 2em;
+    top: 1em;
+    background-color: currentColor;
+  }
+}
+
+/********** Pumpkin Mouth  **********/
