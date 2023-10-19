@@ -1,20 +1,19 @@
-/* *{
-  border: 1px red solid;
-} */
 :root {
   --canvas-Background: #181818;
   --black: #020006;
   --yellow: #ffd239;
   --orange: #f28705;
   --orange-shadow: #f25c05;
-
   --orange-border: #d93d04;
-
   --red-orange: #fc4235;
   --white: #ffffff;
   --green: #014017;
-  --font-size: 10px;
+  --font-size: 15px;
 }
+
+/* *{
+  border: 1px red solid;
+} */
 
 body {
   background-color: var(--canvas-Background);
@@ -23,40 +22,28 @@ body {
   margin: 0 auto;
   place-items: center center;
 }
-
 /********** Door *********/
 .door {
-  /* font-size: var(--font-size); */
+  font-size: var(--font-size);
   position: relative;
   display: flex;
   align-items: flex-end;
-  width: max-content;
   padding: 2em 2em 0 2em;
+  width: max-content;
   height: 45em;
   z-index: 0;
+
   background-image: url("door.jpg");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  /* Pumpkin Shadow */
-  /* &::after {
-      content: "";
-      position: absolute;
-      width: 70%;
-      height: 0.8em;
-      left: 3.3em;
-      border-radius: 0.5em;
-      background-color: var(--black);
-      z-index: 2;
-    } */
 }
-
 /********* Pumpkin Container  *********/
 .pumpkinSize {
-  position: relative;
-  width: 16em;
-  height: 12em;
   z-index: 1;
+  position: relative;
+  width: 14em;
+  height: 12em;
 }
 /* Pumpkin body shape  */
 .pumpkinBody {
@@ -67,7 +54,7 @@ body {
   height: inherit;
   background-color: var(--orange);
   border-radius: 13.875em;
-  /* border: 3px solid var(--orange-border); */
+  /* Sides of pumpkin in shadow  */
   box-shadow: -1.875em 0 var(--orange-shadow), 1.875em 0 var(--orange-shadow);
 }
 /********* Pumpkin Eyes *********/
@@ -85,9 +72,10 @@ body {
   &::before {
     content: "";
     position: absolute;
+    transform: translateY(-15%);
     top: 2.5em;
     right: -1.5em;
-    transform: translateY(-15%);
+
     width: 0;
     height: 0;
     border-left: 1.25em solid transparent;
@@ -100,6 +88,7 @@ body {
     position: absolute;
     top: 2.25em;
     right: 1em;
+
     width: 4.6875em;
     height: 4.6875em;
     border-radius: 50%;
@@ -115,82 +104,78 @@ body {
 
 /********* Pumpkin Stem  *********/
 .pumpkinStem {
-  /* Stem Curved portion  */
+  background-color: var(--green);
   position: absolute;
-  top: -4em;
-  left: 8em;
-  width: 5em;
+  top: -3em;
+  right: 6em;
+
+  width: 1.5em;
   height: 3em;
-  border-radius: 4em 4em 0 0;
-  color: var(--green);
-  border: 1.5em solid;
-  border-bottom: 0;
-  box-sizing: border-box;
   /* Stem Tip End  */
   &::before {
     content: "";
+    background-color: var(--green);
     position: absolute;
-    bottom: -0.5em;
-    right: -1.5em;
+    bottom: 2.5em;
+    right: 0em;
+
     width: 1.5em;
     height: 1.5em;
     border-radius: 40%;
-    background-color: currentColor;
   }
-  /* Stem straight section  */
-  &::after {
-    content: "";
-    position: absolute;
-    width: 1.5em;
-    height: 3em;
-    right: 2em;
-    top: 1em;
-    background-color: currentColor;
-  }
+}
+
+.pumpkinLeaf {
+  background-color: var(--green);
+  z-index: 13;
+  transform: rotate(155deg);
+  position: absolute;
+  top: -4em;
+  left: 5.1em;
+
+  width: 1em;
+  height: 2.5em;
+  border-radius: 0 1em;
 }
 
 /********** Pumpkin Mouth  **********/
 .pumpkinMouth {
+  position: absolute;
+  bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   /* Center Triangle  */
   width: 0;
   height: 0;
   border-left: 1.25em solid transparent;
   border-right: 1.25em solid transparent;
   border-bottom: 2.5em solid var(--black);
-
-  bottom: 1em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: absolute;
-  overflow: visible;
 }
-
 .teethRight {
-  width: 0;
-  height: 0;
-  border-left: 1.25em solid transparent;
-  border-right: 1.25em solid transparent;
-  border-top: 2.5em solid var(--black);
-  display: flex;
-  justify-content: center;
   position: absolute;
   z-index: 15;
-
   top: -0.5em;
   left: 1em;
-}
-.teethLeft {
+  display: flex;
+  justify-content: center;
+
   width: 0;
   height: 0;
   border-left: 1.25em solid transparent;
   border-right: 1.25em solid transparent;
   border-top: 2.5em solid var(--black);
-
+}
+.teethLeft {
+  position: relative;
+  display: flex;
+  justify-content: center;
   top: 0.8em;
   left: -3.75em;
 
-  display: flex;
-  justify-content: center;
-  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 1.25em solid transparent;
+  border-right: 1.25em solid transparent;
+  border-top: 2.5em solid var(--black);
 }
