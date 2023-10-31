@@ -188,7 +188,12 @@ body {
   position: relative;
 font-size: 5em;
 top: -8em;
-transform: rotate(45deg);
+animation: batAnimate ease-in-out 3s infinite;
+
+}
 
 
+@keyframes batAnimate {
+  0% { transform: rotate(0);}
+  100% { transform: rotate(360deg);}
 }
